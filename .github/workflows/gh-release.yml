@@ -1,0 +1,32 @@
+name: Publish
+
+# Only trigger, when the build workflow succeeded
+on:
+  workflow_run:
+    workflows: ["Build"]
+    types:
+      - completed
+
+jobs:
+  gh_release:
+    name: Publish GitHub Release
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Download JAR artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: cics-java-liberty-link (Maven, Java 8)
+        path: cics-java-liberty-link.jar
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      if: github.ref == 'refs/heads/master'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: true
+        prerelease: true
