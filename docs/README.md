@@ -45,7 +45,7 @@ This sample demonstrates how to annotate a POJO packaged in a WAR (Web applicati
 | **cics-java-liberty-link** | Top-level project containing all modules |
 | **cics-java-liberty-link-app** | Web application project with annotated POJO |
 | **cics-java-liberty-link-bundle** | CICS bundle project for Gradle/Maven builds |
-| **etc\eclipse_projects\com.ibm.cics.server.examples.wlp.link.bundle** | CICS Explorer bundle project for 'Export to zFS' deployment |
+| **etc/eclipse_projects/com.ibm.cics.server.examples.wlp.link.bundle** | CICS Explorer bundle project for 'Export to zFS' deployment |
 | **etc/config/liberty/server.xml** | Template Liberty configuration with minimum required features |
 
 ## Prerequisites
