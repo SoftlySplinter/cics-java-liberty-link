@@ -1,0 +1,9 @@
+# CODEOWNERS - Defines maintainers for this CICS sample
+# Docs: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+# Last reviewed: April 2025
+
+# Protect CODEOWNERS file - only administrators can modify
+CODEOWNERS @cicsdev/administrators
+
+# Sample Maintainers
+* @IvanHargreaves @SoftlySplinter @PhilWakelin @AaronJhaj
